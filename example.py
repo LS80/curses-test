@@ -14,7 +14,7 @@ class A():
 a = A()
 
 print(sys.stdout.isatty())
-print(os.environ['TERM'])
+print(os.environ.get('TERM'))
 
 if sys.stdout.isatty():
     try:
