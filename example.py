@@ -1,5 +1,6 @@
 import curses
 import time
+import sys
 
 class A():
     def draw(self, stdscr):
@@ -10,4 +11,7 @@ class A():
             time.sleep(2)
 
 a = A()
-curses.wrapper(a.draw)
+if sys.stdout.isatty():
+    curses.wrapper(a.draw)
+else:
+    print("Hello")
