@@ -17,6 +17,9 @@ print(sys.stdout.isatty())
 print(os.environ['TERM'])
 
 if sys.stdout.isatty():
-    curses.wrapper(a.draw)
+    try:
+        curses.wrapper(a.draw)
+    except curses.error as exc:
+        print(exc)
 else:
     print("Hello")
